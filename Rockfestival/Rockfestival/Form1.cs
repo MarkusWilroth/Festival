@@ -15,20 +15,22 @@ namespace Rockfestival {
         NpgsqlConnection conn;
         NpgsqlCommand cmd;
         NpgsqlDataReader dr;
-        String[] text, labelName;
+        String[] text, labelName, input;
+        int label;
         
 
         public Form1() {
             TextBox tbx_cmd = new TextBox();
             TextBox tbx_ltb = new TextBox();
-            labelName = new string[] {"Bandnamn", "Ursprungsnamn", "Info", "kontaktperson"};
-            lb_ltb.Name = "";
+            labelName = new string[] {"scenid",  "Tid", "Bandnamn", "Lägg till bokningen!" };
             text = new string[] {"Bandnamn: ", "Ursprungsland: ", "Tid: "};
-            text[0] = "Bandnamn: ";
-            text[1] = "Ursprungsland: ";
-            text[2] = "Tid: ";
+            input = new string[10];
+
             InitializeComponent();
             EstablishConnection();
+            label = 0;
+
+            lb_ltb.Text = labelName[label];
         }
 
         private void Form1_Load(object sender, EventArgs e) {
@@ -36,7 +38,7 @@ namespace Rockfestival {
         }
         void EstablishConnection() {            
 
-            string sqlCommand = "Server=pgserver.mah.se; Port=5432; User Id = ah9353; Password = khz0g68k; Database = mfrockfestival";
+            string sqlCommand = "Server=pgserver.mah.se; Port=5432; User Id = ah9353; Password = khz0g68k; Database = mfrockfestival2";
 
                 conn = new NpgsqlConnection(sqlCommand);
                 conn.Open();
@@ -63,7 +65,7 @@ namespace Rockfestival {
         }
 
         private void bt_info_Click(object sender, EventArgs e) { //Här ska en användare få fram namnen på alla band som finns i tabellen spelschema
-            EnterCommand("Select bandnamn from spelschema;"); //Skriv det som ska hända i databasen med SQL kod, t.ex. Select * from tabel....
+            EnterCommand("Select bandnamn from band;"); //Skriv det som ska hända i databasen med SQL kod, t.ex. Select * from tabel....
             while (dr.Read()) {
                 for (int i = 0; i < dr.VisibleFieldCount; i++) {
                     lbx_info.Items.Add("bandet: " + dr[i]);
@@ -77,15 +79,22 @@ namespace Rockfestival {
         private void bt_band_Click(object sender, EventArgs e) {
             lbx_band.Items.Clear();
             string tbxContent = tbx_cmd.Text;
-            EnterCommand("Select * from spelschema where bandnamn = '" + tbxContent + "';");
+            EnterCommand("Select * from band where bandnamn = '" + tbxContent.ToString() + "'; Select tid from spelschema where bandnamn = '" + tbxContent.ToString() + "';"); //Behöver vänta på databaserna
             while (dr.Read()) {
                 for (int i = 0; i < dr.VisibleFieldCount; i++) {
-                    lbx_band.Items.Add(text[i] + dr[i]);
+                    lbx_band.Items.Add(dr[i]);
                     Console.WriteLine(dr[i]);
                 }
             }
-            dr.Close();
-        }
+        //    EnterCommand("Select tid from spelschema where bandnamn = '" + tbxContent.ToString() + "';");
+        //    while (dr.Read()) {
+        //        for (int i = 0; i < dr.VisibleFieldCount; i++) {
+        //            lbx_band.Items.Add(dr[i]);
+        //            Console.WriteLine(dr[i]);
+        //        }
+        //    }
+        //    dr.Close();
+        }//Arbetare, Artist, Band, Scen, Spelschema
 
         private void tbx_cmd_TextChanged(object sender, EventArgs e) {
 
@@ -94,14 +103,33 @@ namespace Rockfestival {
         private void bt_medlem_Click(object sender, EventArgs e) {
             lbx_medlem.Items.Clear();
             string tbxContent = tbx_cmd.Text;
+            EnterCommand("select * from artist where namn = '" + tbxContent + "';");
+            while (dr.Read()) {
+                for (int i = 0; i < dr.VisibleFieldCount; i++) {
+                    lbx_medlem.Items.Add(dr[i]);
+                    Console.WriteLine(dr[i]);
+                }
+            }
+            dr.Close();
 
         }
 
         private void bt_ltb_Click(object sender, EventArgs e) {
+            EnterCommand("insert into spelschema(scenid, tid) values ('"+input[0]+"', '" + input[1] + "') where bandnamn = '"+input[2]+"';");
+            for (int i = 0; i < label; i++) {
+                input[i] = "";
+            }
+            label = 0;
             
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void bt_Next_Click(object sender, EventArgs e) {
+            if (label <= 4) {
+                input[label] = tbx_ltb.Text;
+                tbx_ltb.Text = "";
+                label++;
+            }
+            lb_ltb.Text = labelName[label];
 
         }
     }

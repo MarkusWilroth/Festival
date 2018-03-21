@@ -34,7 +34,7 @@
             this.bt_ltb = new System.Windows.Forms.Button();
             this.tbx_ltb = new System.Windows.Forms.TextBox();
             this.lb_ltb = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_Next = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_info
@@ -155,25 +155,25 @@
             this.lb_ltb.TabIndex = 10;
             this.lb_ltb.Text = "Skriv in Bandnamn";
             // 
-            // button1
+            // bt_Next
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(752, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 49);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Nästa";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bt_Next.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bt_Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.bt_Next.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bt_Next.Location = new System.Drawing.Point(752, 12);
+            this.bt_Next.Name = "bt_Next";
+            this.bt_Next.Size = new System.Drawing.Size(104, 49);
+            this.bt_Next.TabIndex = 11;
+            this.bt_Next.Text = "Nästa";
+            this.bt_Next.UseVisualStyleBackColor = false;
+            this.bt_Next.Click += new System.EventHandler(this.bt_Next_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 604);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bt_Next);
             this.Controls.Add(this.lb_ltb);
             this.Controls.Add(this.tbx_ltb);
             this.Controls.Add(this.bt_ltb);
@@ -206,7 +206,7 @@
         private System.Windows.Forms.Button bt_ltb;
         private System.Windows.Forms.TextBox tbx_ltb;
         private System.Windows.Forms.Label lb_ltb;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_Next;
     }
 }
 
