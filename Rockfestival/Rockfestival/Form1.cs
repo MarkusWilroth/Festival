@@ -78,6 +78,7 @@ namespace Rockfestival {
 
         private void bt_band_Click(object sender, EventArgs e) {
             lbx_band.Items.Clear();
+            lbx_artist.Items.Clear();
             string tbxContent = tbx_cmd.Text;
             EnterCommand("Select * from band where bandnamn = '" + tbxContent.ToString() + "';"); //Behöver vänta på databaserna
             while (dr.Read()) {
@@ -91,6 +92,14 @@ namespace Rockfestival {
             while (dr.Read()) {
                 for (int i = 0; i < dr.VisibleFieldCount; i++) {
                     lbx_band.Items.Add(dr[i]);
+                    Console.WriteLine(dr[i]);
+                }
+            }
+            dr.Close();
+            EnterCommand("Select namn from artist where bandnamn = '" + tbxContent.ToString() + "';");
+            while (dr.Read()) {
+                for (int i = 0; i < dr.VisibleFieldCount; i++) {
+                    lbx_artist.Items.Add(dr[i]);
                     Console.WriteLine(dr[i]);
                 }
             }

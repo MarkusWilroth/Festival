@@ -35,6 +35,9 @@
             this.tbx_ltb = new System.Windows.Forms.TextBox();
             this.lb_ltb = new System.Windows.Forms.Label();
             this.bt_Next = new System.Windows.Forms.Button();
+            this.lbx_artist = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bt_info
@@ -44,7 +47,7 @@
             this.bt_info.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bt_info.Location = new System.Drawing.Point(13, 13);
             this.bt_info.Name = "bt_info";
-            this.bt_info.Size = new System.Drawing.Size(194, 104);
+            this.bt_info.Size = new System.Drawing.Size(194, 82);
             this.bt_info.TabIndex = 0;
             this.bt_info.Text = "Info";
             this.bt_info.UseVisualStyleBackColor = false;
@@ -55,14 +58,14 @@
             this.lbx_info.FormattingEnabled = true;
             this.lbx_info.Location = new System.Drawing.Point(213, 12);
             this.lbx_info.Name = "lbx_info";
-            this.lbx_info.Size = new System.Drawing.Size(146, 108);
+            this.lbx_info.Size = new System.Drawing.Size(158, 82);
             this.lbx_info.TabIndex = 1;
             // 
             // tbx_cmd
             // 
-            this.tbx_cmd.Location = new System.Drawing.Point(13, 482);
+            this.tbx_cmd.Location = new System.Drawing.Point(15, 452);
             this.tbx_cmd.Name = "tbx_cmd";
-            this.tbx_cmd.Size = new System.Drawing.Size(350, 20);
+            this.tbx_cmd.Size = new System.Drawing.Size(340, 20);
             this.tbx_cmd.TabIndex = 2;
             this.tbx_cmd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbx_cmd.TextChanged += new System.EventHandler(this.tbx_cmd_TextChanged);
@@ -74,7 +77,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.2F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(13, 442);
+            this.label1.Location = new System.Drawing.Point(15, 412);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(340, 37);
             this.label1.TabIndex = 3;
@@ -86,9 +89,9 @@
             this.bt_band.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_band.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.bt_band.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_band.Location = new System.Drawing.Point(13, 124);
+            this.bt_band.Location = new System.Drawing.Point(12, 101);
             this.bt_band.Name = "bt_band";
-            this.bt_band.Size = new System.Drawing.Size(194, 80);
+            this.bt_band.Size = new System.Drawing.Size(359, 80);
             this.bt_band.TabIndex = 4;
             this.bt_band.Text = "Bandet";
             this.bt_band.UseVisualStyleBackColor = false;
@@ -97,9 +100,9 @@
             // lbx_band
             // 
             this.lbx_band.FormattingEnabled = true;
-            this.lbx_band.Location = new System.Drawing.Point(214, 127);
+            this.lbx_band.Location = new System.Drawing.Point(12, 212);
             this.lbx_band.Name = "lbx_band";
-            this.lbx_band.Size = new System.Drawing.Size(145, 82);
+            this.lbx_band.Size = new System.Drawing.Size(176, 82);
             this.lbx_band.TabIndex = 5;
             // 
             // bt_medlem
@@ -107,9 +110,9 @@
             this.bt_medlem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_medlem.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.bt_medlem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_medlem.Location = new System.Drawing.Point(13, 211);
+            this.bt_medlem.Location = new System.Drawing.Point(13, 300);
             this.bt_medlem.Name = "bt_medlem";
-            this.bt_medlem.Size = new System.Drawing.Size(194, 72);
+            this.bt_medlem.Size = new System.Drawing.Size(175, 72);
             this.bt_medlem.TabIndex = 6;
             this.bt_medlem.Text = "Medlem";
             this.bt_medlem.UseVisualStyleBackColor = false;
@@ -118,9 +121,9 @@
             // lbx_medlem
             // 
             this.lbx_medlem.FormattingEnabled = true;
-            this.lbx_medlem.Location = new System.Drawing.Point(214, 216);
+            this.lbx_medlem.Location = new System.Drawing.Point(197, 303);
             this.lbx_medlem.Name = "lbx_medlem";
-            this.lbx_medlem.Size = new System.Drawing.Size(145, 69);
+            this.lbx_medlem.Size = new System.Drawing.Size(174, 69);
             this.lbx_medlem.TabIndex = 7;
             // 
             // bt_ltb
@@ -168,11 +171,46 @@
             this.bt_Next.UseVisualStyleBackColor = false;
             this.bt_Next.Click += new System.EventHandler(this.bt_Next_Click);
             // 
+            // lbx_artist
+            // 
+            this.lbx_artist.FormattingEnabled = true;
+            this.lbx_artist.Location = new System.Drawing.Point(194, 212);
+            this.lbx_artist.Name = "lbx_artist";
+            this.lbx_artist.Size = new System.Drawing.Size(177, 82);
+            this.lbx_artist.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(54, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Band Info";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(208, 184);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 25);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Artister i bandet";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 604);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbx_artist);
             this.Controls.Add(this.bt_Next);
             this.Controls.Add(this.lb_ltb);
             this.Controls.Add(this.tbx_ltb);
@@ -207,6 +245,9 @@
         private System.Windows.Forms.TextBox tbx_ltb;
         private System.Windows.Forms.Label lb_ltb;
         private System.Windows.Forms.Button bt_Next;
+        private System.Windows.Forms.ListBox lbx_artist;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
