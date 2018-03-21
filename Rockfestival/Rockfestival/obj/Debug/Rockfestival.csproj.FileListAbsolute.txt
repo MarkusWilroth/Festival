@@ -1,0 +1,13 @@
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\bin\Debug\Rockfestival.exe.config
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\bin\Debug\Rockfestival.exe
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\bin\Debug\Rockfestival.pdb
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\bin\Debug\Npgsql.dll
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\bin\Debug\System.Threading.Tasks.Extensions.dll
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\bin\Debug\Npgsql.xml
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\bin\Debug\System.Threading.Tasks.Extensions.xml
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\obj\Debug\Rockfestival.csprojResolveAssemblyReference.cache
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\obj\Debug\Rockfestival.Form1.resources
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\obj\Debug\Rockfestival.Properties.Resources.resources
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\obj\Debug\Rockfestival.csproj.GenerateResource.Cache
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\obj\Debug\Rockfestival.exe
+c:\users\spellabbet\documents\visual studio 2015\Projects\Rockfestival\Rockfestival\obj\Debug\Rockfestival.pdb
