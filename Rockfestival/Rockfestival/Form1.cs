@@ -79,21 +79,22 @@ namespace Rockfestival {
         private void bt_band_Click(object sender, EventArgs e) {
             lbx_band.Items.Clear();
             string tbxContent = tbx_cmd.Text;
-            EnterCommand("Select * from band where bandnamn = '" + tbxContent.ToString() + "'; Select tid from spelschema where bandnamn = '" + tbxContent.ToString() + "';"); //Behöver vänta på databaserna
+            EnterCommand("Select * from band where bandnamn = '" + tbxContent.ToString() + "';"); //Behöver vänta på databaserna
             while (dr.Read()) {
                 for (int i = 0; i < dr.VisibleFieldCount; i++) {
                     lbx_band.Items.Add(dr[i]);
                     Console.WriteLine(dr[i]);
                 }
             }
-        //    EnterCommand("Select tid from spelschema where bandnamn = '" + tbxContent.ToString() + "';");
-        //    while (dr.Read()) {
-        //        for (int i = 0; i < dr.VisibleFieldCount; i++) {
-        //            lbx_band.Items.Add(dr[i]);
-        //            Console.WriteLine(dr[i]);
-        //        }
-        //    }
-        //    dr.Close();
+            dr.Close();
+            EnterCommand("Select tid from spelschema where bandnamn = '" + tbxContent.ToString() + "';");
+            while (dr.Read()) {
+                for (int i = 0; i < dr.VisibleFieldCount; i++) {
+                    lbx_band.Items.Add(dr[i]);
+                    Console.WriteLine(dr[i]);
+                }
+            }
+            dr.Close();
         }//Arbetare, Artist, Band, Scen, Spelschema
 
         private void tbx_cmd_TextChanged(object sender, EventArgs e) {
