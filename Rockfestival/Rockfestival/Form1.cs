@@ -15,8 +15,18 @@ namespace Rockfestival {
         NpgsqlConnection conn;
         NpgsqlCommand cmd;
         NpgsqlDataReader dr;
+        String[] text, labelName;
+        
 
         public Form1() {
+            TextBox tbx_cmd = new TextBox();
+            TextBox tbx_ltb = new TextBox();
+            labelName = new string[] {"Bandnamn", "Ursprungsnamn", "Info", "kontaktperson"};
+            lb_ltb.Name = "";
+            text = new string[] {"Bandnamn: ", "Ursprungsland: ", "Tid: "};
+            text[0] = "Bandnamn: ";
+            text[1] = "Ursprungsland: ";
+            text[2] = "Tid: ";
             InitializeComponent();
             EstablishConnection();
         }
@@ -52,15 +62,46 @@ namespace Rockfestival {
             Console.WriteLine(sqlCommand);
         }
 
-        private void bt_info_Click(object sender, EventArgs e) {
-            EnterCommand(""); //Skriv det som ska hända i databasen med SQL kod, t.ex. Select * from tabel....
+        private void bt_info_Click(object sender, EventArgs e) { //Här ska en användare få fram namnen på alla band som finns i tabellen spelschema
+            EnterCommand("Select bandnamn from spelschema;"); //Skriv det som ska hända i databasen med SQL kod, t.ex. Select * from tabel....
             while (dr.Read()) {
                 for (int i = 0; i < dr.VisibleFieldCount; i++) {
-                    lbx_info.Items.Add(dr[i]);
+                    lbx_info.Items.Add("bandet: " + dr[i]);
                     Console.WriteLine(dr[i]);
                 }
             }
             dr.Close();
+
+        }
+
+        private void bt_band_Click(object sender, EventArgs e) {
+            lbx_band.Items.Clear();
+            string tbxContent = tbx_cmd.Text;
+            EnterCommand("Select * from spelschema where bandnamn = '" + tbxContent + "';");
+            while (dr.Read()) {
+                for (int i = 0; i < dr.VisibleFieldCount; i++) {
+                    lbx_band.Items.Add(text[i] + dr[i]);
+                    Console.WriteLine(dr[i]);
+                }
+            }
+            dr.Close();
+        }
+
+        private void tbx_cmd_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void bt_medlem_Click(object sender, EventArgs e) {
+            lbx_medlem.Items.Clear();
+            string tbxContent = tbx_cmd.Text;
+
+        }
+
+        private void bt_ltb_Click(object sender, EventArgs e) {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
 
         }
     }
