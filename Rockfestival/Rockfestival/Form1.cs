@@ -53,7 +53,7 @@ namespace Rockfestival {
         }
 
         private void bt_info_Click(object sender, EventArgs e) {
-            EnterCommand("Select * from spelschema;" );
+            EnterCommand(""); //Skriv det som ska hända i databasen med SQL kod, t.ex. Select * from tabel....
             while (dr.Read()) {
                 for (int i = 0; i < dr.VisibleFieldCount; i++) {
                     lbx_info.Items.Add(dr[i]);
