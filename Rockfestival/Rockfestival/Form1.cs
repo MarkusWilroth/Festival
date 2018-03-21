@@ -15,14 +15,16 @@ namespace Rockfestival {
         NpgsqlConnection conn;
         NpgsqlCommand cmd;
         NpgsqlDataReader dr;
-        String[] text, labelName, input;
+        String[] text, labelBokning, labelScen, input;
         int label;
         
 
         public Form1() {
             TextBox tbx_cmd = new TextBox();
             TextBox tbx_ltb = new TextBox();
-            labelName = new string[] {"scenid",  "Tid", "Bandnamn", "Lägg till bokningen!" };
+            TextBox tbx_scen = new TextBox();
+            labelScen = new string[] {"Scenid",  "Tid", "Bandnamn", "Lägg till bokningen!" };
+            labelBokning = new string[] {"Info", "Bandnamn","Ursprungsland","Kontaktperson", "Lägg till bokning" };
             text = new string[] {"Bandnamn: ", "Ursprungsland: ", "Tid: "};
             input = new string[10];
 
@@ -30,7 +32,8 @@ namespace Rockfestival {
             EstablishConnection();
             label = 0;
 
-            lb_ltb.Text = labelName[label];
+            lb_ltb.Text = labelBokning[label];
+            lb_scen.Text = labelScen[label];
         }
 
         private void Form1_Load(object sender, EventArgs e) {
@@ -124,13 +127,48 @@ namespace Rockfestival {
 
         }
 
-        private void bt_ltb_Click(object sender, EventArgs e) {
-            EnterCommand("insert into spelschema(scenid, tid) values ('"+input[0]+"', '" + input[1] + "') where bandnamn = '"+input[2]+"';");
+        private void bt_scen_Click(object sender, EventArgs e) {
+            EnterCommand("insert into spelschema(scenid, tid, bandnamn) values ('" + input[0] + "', '" + input[1] + "', '" + input[2] + "');");
             for (int i = 0; i < label; i++) {
                 input[i] = "";
             }
             label = 0;
-            
+            dr.Close();
+        }
+
+        private void bt_nextScen_Click(object sender, EventArgs e) {
+            if (label <= 4) {
+                input[label] = tbx_scen.Text;
+                tbx_scen.Text = "";
+                label++;
+                lb_scen.Text = labelScen[label];
+
+            }
+        }
+
+        private void tbx_scen_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void bt_person_Click(object sender, EventArgs e) {
+            if (gb_person.Visible == true) {
+                gb_person.Visible = false;
+            }
+            else {
+                gb_person.Visible = true;
+            }
+        }
+
+        private void bt_ltb_Click(object sender, EventArgs e) {
+            for (int i = 0; i < label; i++) {
+                Console.WriteLine("Input[" + i + "]: " + input[i]);
+            }
+            EnterCommand("insert into band(info, bandnamn, ursprungsland, kontaktperson) values ('" + input[0] + "', '" + input[1] + "', '" + input[2] + "', '" + input[3] + "');");
+            for (int i = 0; i < label; i++) {
+                input[i] = "";
+            }
+            label = 0;
+            dr.Close();
         }
 
         private void bt_Next_Click(object sender, EventArgs e) {
@@ -138,8 +176,10 @@ namespace Rockfestival {
                 input[label] = tbx_ltb.Text;
                 tbx_ltb.Text = "";
                 label++;
+                lb_ltb.Text = labelBokning[label];
+                
             }
-            lb_ltb.Text = labelName[label];
+            
 
         }
     }
