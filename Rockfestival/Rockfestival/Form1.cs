@@ -111,7 +111,7 @@ namespace Rockfestival {
                 }
             }
             dr.Close();
-        }//Arbetare, Artist, Band, Scen, Spelschema
+        }
 
         private void tbx_cmd_TextChanged(object sender, EventArgs e) {
 
@@ -191,11 +191,11 @@ namespace Rockfestival {
         }
 
         private void bt_person_Click(object sender, EventArgs e) {
-            if (gb_person.Visible == true) {
-                gb_person.Visible = false;
+            if (gb_kansliet.Visible == true) {
+                gb_kansliet.Visible = false;
             }
             else {
-                gb_person.Visible = true;
+                gb_kansliet.Visible = true;
             }
         }
 

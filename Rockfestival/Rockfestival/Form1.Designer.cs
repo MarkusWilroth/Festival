@@ -49,7 +49,9 @@
             this.tbx_kontakt = new System.Windows.Forms.TextBox();
             this.lb_kontakt = new System.Windows.Forms.Label();
             this.tbx_legit = new System.Windows.Forms.TextBox();
+            this.gb_kansliet = new System.Windows.Forms.GroupBox();
             this.gb_person.SuspendLayout();
+            this.gb_kansliet.SuspendLayout();
             this.SuspendLayout();
             // 
             // bt_info
@@ -143,7 +145,7 @@
             this.bt_ltb.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_ltb.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.bt_ltb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_ltb.Location = new System.Drawing.Point(407, 21);
+            this.bt_ltb.Location = new System.Drawing.Point(6, 19);
             this.bt_ltb.Name = "bt_ltb";
             this.bt_ltb.Size = new System.Drawing.Size(148, 104);
             this.bt_ltb.TabIndex = 8;
@@ -153,7 +155,7 @@
             // 
             // tbx_ltb
             // 
-            this.tbx_ltb.Location = new System.Drawing.Point(561, 55);
+            this.tbx_ltb.Location = new System.Drawing.Point(160, 53);
             this.tbx_ltb.Name = "tbx_ltb";
             this.tbx_ltb.Size = new System.Drawing.Size(215, 20);
             this.tbx_ltb.TabIndex = 9;
@@ -164,7 +166,7 @@
             this.lb_ltb.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lb_ltb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lb_ltb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_ltb.Location = new System.Drawing.Point(561, 22);
+            this.lb_ltb.Location = new System.Drawing.Point(160, 20);
             this.lb_ltb.Name = "lb_ltb";
             this.lb_ltb.Size = new System.Drawing.Size(176, 25);
             this.lb_ltb.TabIndex = 10;
@@ -175,7 +177,7 @@
             this.bt_Next.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.bt_Next.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_Next.Location = new System.Drawing.Point(561, 81);
+            this.bt_Next.Location = new System.Drawing.Point(160, 79);
             this.bt_Next.Name = "bt_Next";
             this.bt_Next.Size = new System.Drawing.Size(215, 44);
             this.bt_Next.TabIndex = 11;
@@ -230,7 +232,7 @@
             this.gb_person.Controls.Add(this.bt_medlem);
             this.gb_person.Controls.Add(this.lbx_medlem);
             this.gb_person.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gb_person.Location = new System.Drawing.Point(10, 12);
+            this.gb_person.Location = new System.Drawing.Point(47, 12);
             this.gb_person.Name = "gb_person";
             this.gb_person.Size = new System.Drawing.Size(373, 479);
             this.gb_person.TabIndex = 15;
@@ -242,11 +244,11 @@
             this.bt_person.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_person.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
             this.bt_person.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_person.Location = new System.Drawing.Point(32, 498);
+            this.bt_person.Location = new System.Drawing.Point(547, 409);
             this.bt_person.Name = "bt_person";
             this.bt_person.Size = new System.Drawing.Size(326, 94);
             this.bt_person.TabIndex = 16;
-            this.bt_person.Text = "Person";
+            this.bt_person.Text = "Kansliet";
             this.bt_person.UseVisualStyleBackColor = false;
             this.bt_person.Click += new System.EventHandler(this.bt_person_Click);
             // 
@@ -255,7 +257,7 @@
             this.bt_scen.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_scen.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.bt_scen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_scen.Location = new System.Drawing.Point(407, 132);
+            this.bt_scen.Location = new System.Drawing.Point(6, 130);
             this.bt_scen.Name = "bt_scen";
             this.bt_scen.Size = new System.Drawing.Size(148, 98);
             this.bt_scen.TabIndex = 17;
@@ -269,7 +271,7 @@
             this.lb_scen.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lb_scen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lb_scen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_scen.Location = new System.Drawing.Point(561, 132);
+            this.lb_scen.Location = new System.Drawing.Point(160, 130);
             this.lb_scen.Name = "lb_scen";
             this.lb_scen.Size = new System.Drawing.Size(176, 25);
             this.lb_scen.TabIndex = 18;
@@ -280,7 +282,7 @@
             this.bt_nextScen.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_nextScen.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.bt_nextScen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_nextScen.Location = new System.Drawing.Point(561, 186);
+            this.bt_nextScen.Location = new System.Drawing.Point(160, 184);
             this.bt_nextScen.Name = "bt_nextScen";
             this.bt_nextScen.Size = new System.Drawing.Size(215, 44);
             this.bt_nextScen.TabIndex = 20;
@@ -290,7 +292,7 @@
             // 
             // tbx_scen
             // 
-            this.tbx_scen.Location = new System.Drawing.Point(561, 160);
+            this.tbx_scen.Location = new System.Drawing.Point(160, 158);
             this.tbx_scen.Name = "tbx_scen";
             this.tbx_scen.Size = new System.Drawing.Size(215, 20);
             this.tbx_scen.TabIndex = 19;
@@ -301,7 +303,7 @@
             this.bt_kontakt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_kontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.bt_kontakt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_kontakt.Location = new System.Drawing.Point(407, 237);
+            this.bt_kontakt.Location = new System.Drawing.Point(6, 235);
             this.bt_kontakt.Name = "bt_kontakt";
             this.bt_kontakt.Size = new System.Drawing.Size(148, 97);
             this.bt_kontakt.TabIndex = 21;
@@ -314,7 +316,7 @@
             this.bt_nextKontakt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_nextKontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.bt_nextKontakt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_nextKontakt.Location = new System.Drawing.Point(566, 290);
+            this.bt_nextKontakt.Location = new System.Drawing.Point(165, 288);
             this.bt_nextKontakt.Name = "bt_nextKontakt";
             this.bt_nextKontakt.Size = new System.Drawing.Size(215, 44);
             this.bt_nextKontakt.TabIndex = 24;
@@ -324,7 +326,7 @@
             // 
             // tbx_kontakt
             // 
-            this.tbx_kontakt.Location = new System.Drawing.Point(566, 264);
+            this.tbx_kontakt.Location = new System.Drawing.Point(165, 262);
             this.tbx_kontakt.Name = "tbx_kontakt";
             this.tbx_kontakt.Size = new System.Drawing.Size(215, 20);
             this.tbx_kontakt.TabIndex = 23;
@@ -335,7 +337,7 @@
             this.lb_kontakt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lb_kontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lb_kontakt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_kontakt.Location = new System.Drawing.Point(566, 236);
+            this.lb_kontakt.Location = new System.Drawing.Point(165, 234);
             this.lb_kontakt.Name = "lb_kontakt";
             this.lb_kontakt.Size = new System.Drawing.Size(176, 25);
             this.lb_kontakt.TabIndex = 22;
@@ -343,38 +345,50 @@
             // 
             // tbx_legit
             // 
-            this.tbx_legit.Location = new System.Drawing.Point(407, 341);
+            this.tbx_legit.Location = new System.Drawing.Point(6, 339);
             this.tbx_legit.Name = "tbx_legit";
             this.tbx_legit.Size = new System.Drawing.Size(374, 20);
             this.tbx_legit.TabIndex = 25;
+            // 
+            // gb_kansliet
+            // 
+            this.gb_kansliet.Controls.Add(this.bt_ltb);
+            this.gb_kansliet.Controls.Add(this.tbx_legit);
+            this.gb_kansliet.Controls.Add(this.tbx_ltb);
+            this.gb_kansliet.Controls.Add(this.bt_nextKontakt);
+            this.gb_kansliet.Controls.Add(this.lb_ltb);
+            this.gb_kansliet.Controls.Add(this.tbx_kontakt);
+            this.gb_kansliet.Controls.Add(this.bt_Next);
+            this.gb_kansliet.Controls.Add(this.lb_kontakt);
+            this.gb_kansliet.Controls.Add(this.bt_scen);
+            this.gb_kansliet.Controls.Add(this.bt_kontakt);
+            this.gb_kansliet.Controls.Add(this.lb_scen);
+            this.gb_kansliet.Controls.Add(this.bt_nextScen);
+            this.gb_kansliet.Controls.Add(this.tbx_scen);
+            this.gb_kansliet.Location = new System.Drawing.Point(511, 22);
+            this.gb_kansliet.Name = "gb_kansliet";
+            this.gb_kansliet.Size = new System.Drawing.Size(394, 377);
+            this.gb_kansliet.TabIndex = 26;
+            this.gb_kansliet.TabStop = false;
+            this.gb_kansliet.Text = "Kansliet";
+            this.gb_kansliet.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 604);
-            this.Controls.Add(this.tbx_legit);
-            this.Controls.Add(this.bt_nextKontakt);
-            this.Controls.Add(this.tbx_kontakt);
-            this.Controls.Add(this.lb_kontakt);
-            this.Controls.Add(this.bt_kontakt);
-            this.Controls.Add(this.bt_nextScen);
-            this.Controls.Add(this.tbx_scen);
-            this.Controls.Add(this.lb_scen);
-            this.Controls.Add(this.bt_scen);
+            this.Controls.Add(this.gb_kansliet);
             this.Controls.Add(this.bt_person);
             this.Controls.Add(this.gb_person);
-            this.Controls.Add(this.bt_Next);
-            this.Controls.Add(this.lb_ltb);
-            this.Controls.Add(this.tbx_ltb);
-            this.Controls.Add(this.bt_ltb);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gb_person.ResumeLayout(false);
             this.gb_person.PerformLayout();
+            this.gb_kansliet.ResumeLayout(false);
+            this.gb_kansliet.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -406,6 +420,7 @@
         private System.Windows.Forms.TextBox tbx_kontakt;
         private System.Windows.Forms.Label lb_kontakt;
         private System.Windows.Forms.TextBox tbx_legit;
+        private System.Windows.Forms.GroupBox gb_kansliet;
     }
 }
 
