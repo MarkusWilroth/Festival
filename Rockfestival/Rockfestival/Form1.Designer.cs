@@ -44,6 +44,11 @@
             this.lb_scen = new System.Windows.Forms.Label();
             this.bt_nextScen = new System.Windows.Forms.Button();
             this.tbx_scen = new System.Windows.Forms.TextBox();
+            this.bt_kontakt = new System.Windows.Forms.Button();
+            this.bt_nextKontakt = new System.Windows.Forms.Button();
+            this.tbx_kontakt = new System.Windows.Forms.TextBox();
+            this.lb_kontakt = new System.Windows.Forms.Label();
+            this.tbx_legit = new System.Windows.Forms.TextBox();
             this.gb_person.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -291,11 +296,68 @@
             this.tbx_scen.TabIndex = 19;
             this.tbx_scen.TextChanged += new System.EventHandler(this.tbx_scen_TextChanged);
             // 
+            // bt_kontakt
+            // 
+            this.bt_kontakt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bt_kontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.bt_kontakt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bt_kontakt.Location = new System.Drawing.Point(407, 237);
+            this.bt_kontakt.Name = "bt_kontakt";
+            this.bt_kontakt.Size = new System.Drawing.Size(148, 97);
+            this.bt_kontakt.TabIndex = 21;
+            this.bt_kontakt.Text = "Lägg till kontaktperson";
+            this.bt_kontakt.UseVisualStyleBackColor = false;
+            this.bt_kontakt.Click += new System.EventHandler(this.bt_kontakt_Click);
+            // 
+            // bt_nextKontakt
+            // 
+            this.bt_nextKontakt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bt_nextKontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.bt_nextKontakt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bt_nextKontakt.Location = new System.Drawing.Point(566, 290);
+            this.bt_nextKontakt.Name = "bt_nextKontakt";
+            this.bt_nextKontakt.Size = new System.Drawing.Size(215, 44);
+            this.bt_nextKontakt.TabIndex = 24;
+            this.bt_nextKontakt.Text = "Nästa";
+            this.bt_nextKontakt.UseVisualStyleBackColor = false;
+            this.bt_nextKontakt.Click += new System.EventHandler(this.bt_nextKontakt_Click);
+            // 
+            // tbx_kontakt
+            // 
+            this.tbx_kontakt.Location = new System.Drawing.Point(566, 264);
+            this.tbx_kontakt.Name = "tbx_kontakt";
+            this.tbx_kontakt.Size = new System.Drawing.Size(215, 20);
+            this.tbx_kontakt.TabIndex = 23;
+            // 
+            // lb_kontakt
+            // 
+            this.lb_kontakt.AutoSize = true;
+            this.lb_kontakt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lb_kontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lb_kontakt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_kontakt.Location = new System.Drawing.Point(566, 236);
+            this.lb_kontakt.Name = "lb_kontakt";
+            this.lb_kontakt.Size = new System.Drawing.Size(176, 25);
+            this.lb_kontakt.TabIndex = 22;
+            this.lb_kontakt.Text = "Skriv in Bandnamn";
+            // 
+            // tbx_legit
+            // 
+            this.tbx_legit.Location = new System.Drawing.Point(407, 341);
+            this.tbx_legit.Name = "tbx_legit";
+            this.tbx_legit.Size = new System.Drawing.Size(374, 20);
+            this.tbx_legit.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 604);
+            this.Controls.Add(this.tbx_legit);
+            this.Controls.Add(this.bt_nextKontakt);
+            this.Controls.Add(this.tbx_kontakt);
+            this.Controls.Add(this.lb_kontakt);
+            this.Controls.Add(this.bt_kontakt);
             this.Controls.Add(this.bt_nextScen);
             this.Controls.Add(this.tbx_scen);
             this.Controls.Add(this.lb_scen);
@@ -339,6 +401,11 @@
         private System.Windows.Forms.Label lb_scen;
         private System.Windows.Forms.Button bt_nextScen;
         private System.Windows.Forms.TextBox tbx_scen;
+        private System.Windows.Forms.Button bt_kontakt;
+        private System.Windows.Forms.Button bt_nextKontakt;
+        private System.Windows.Forms.TextBox tbx_kontakt;
+        private System.Windows.Forms.Label lb_kontakt;
+        private System.Windows.Forms.TextBox tbx_legit;
     }
 }
 
