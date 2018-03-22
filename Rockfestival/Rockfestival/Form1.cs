@@ -15,16 +15,16 @@ namespace Rockfestival {
         NpgsqlConnection conn;
         NpgsqlCommand cmd;
         NpgsqlDataReader dr;
-        String[] text, labelBokning, labelScen, labelKontakt, arbetare, input;
+        String[] text, labelBokning, labelScen, labelKontakt, arbetare, input, bandText;
         int label;
         bool legit;
         
 
         public Form1() {
-            TextBox tbx_cmd = new TextBox();
+            TextBox tbx_cmd = new TextBox(); //Det som ska skrivas i de olika blocken
             TextBox tbx_ltb = new TextBox();
             TextBox tbx_scen = new TextBox();
-            labelScen = new string[] {"Scenid",  "Tid", "Bandnamn", "Lägg till bokningen!" };
+            labelScen = new string[] {"Scenid",  "Tid", "Bandnamn", "Lägg till bokningen!" }; //Labels som ändras när man trycker på knappar
             labelBokning = new string[] {"Info", "Bandnamn","Ursprungsland", "Lägg till bokning" };
             labelKontakt = new string[] {"Bandnamn", "Kontaktperson", "Lägg till personen"};
             arbetare = new string[] { "Sven", "Karl", "Bengt" };
@@ -43,7 +43,7 @@ namespace Rockfestival {
         private void Form1_Load(object sender, EventArgs e) {
 
         }
-        void EstablishConnection() {            
+        void EstablishConnection() { //Kopplar upp oss till rätt databas           
 
             string sqlCommand = "Server=pgserver.mah.se; Port=5432; User Id = ah9353; Password = khz0g68k; Database = mfrockfestival2";
 
@@ -62,10 +62,10 @@ namespace Rockfestival {
                 else {
                     Console.WriteLine("Data does not exist");
                 }
-                dr.Close();
+                dr.Close(); //Stänger av kommandot så att man kan skriva in nya kommandom till databasen
             
         }
-        void EnterCommand(string sqlCommand) {
+        void EnterCommand(string sqlCommand) { //Kommandot som tar oss in i databasen och kan ändra värderna
             cmd = new NpgsqlCommand(sqlCommand, conn);
             dr = cmd.ExecuteReader();
             Console.WriteLine(sqlCommand);
@@ -81,13 +81,13 @@ namespace Rockfestival {
             }
             dr.Close();
 
-        }
+        } //Det som händer när man klickar på knappen Info
 
         private void bt_band_Click(object sender, EventArgs e) {
             lbx_band.Items.Clear();
             lbx_artist.Items.Clear();
             string tbxContent = tbx_cmd.Text;
-            EnterCommand("Select * from band where bandnamn = '" + tbxContent.ToString() + "';"); //Behöver vänta på databaserna
+            EnterCommand("Select * from band where bandnamn = '" + tbxContent.ToString() + "';"); // skickar in kommandot till metoden EnterCommand
             while (dr.Read()) {
                 for (int i = 0; i < dr.VisibleFieldCount; i++) {
                     lbx_band.Items.Add(dr[i]);
@@ -95,7 +95,7 @@ namespace Rockfestival {
                 }
             }
             dr.Close();
-            EnterCommand("Select tid from spelschema where bandnamn = '" + tbxContent.ToString() + "';");
+            EnterCommand("Select scenID, tid from spelschema where bandnamn = '" + tbxContent.ToString() + "';");
             while (dr.Read()) {
                 for (int i = 0; i < dr.VisibleFieldCount; i++) {
                     lbx_band.Items.Add(dr[i]);
